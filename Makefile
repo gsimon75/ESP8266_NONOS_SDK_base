@@ -22,7 +22,7 @@ else
 	OBJDUMP = xt-objdump
 endif
 
-PYTHON?=python2
+PYTHON?=python3
 BOOT?=none
 APP?=0
 SPI_SPEED?=40
@@ -180,11 +180,11 @@ else
     app = 0
 endif
 
-CSRCS ?= $(wildcard *.c)
-CXXSRCS ?= $(wildcard *.cpp)
-ASRCs ?= $(wildcard *.s)
-ASRCS ?= $(wildcard *.S)
-SUBDIRS ?= $(patsubst %/,%,$(dir $(wildcard */Makefile)))
+CSRCS ?= $(sort $(wildcard *.c))
+CXXSRCS ?= $(sort $(wildcard *.cpp))
+ASRCs ?= $(sort $(wildcard *.s))
+ASRCS ?= $(sort $(wildcard *.S))
+SUBDIRS ?= $(patsubst %/,%,$(dir $(sort $(wildcard */Makefile))))
 
 ODIR := .output
 OBJODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/obj

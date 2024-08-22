@@ -1,0 +1,4 @@
+eagle.flash.bin
+eagle.irom0text.bin
+*.dump
+*.S
